@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strneq.c                                        :+:      :+:    :+:   */
+/*   ft_memdel_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/23 18:30:36 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/23 18:32:43 by lsuardi          ###   ########.fr       */
+/*   Created: 2020/03/23 18:22:17 by lsuardi           #+#    #+#             */
+/*   Updated: 2020/03/24 16:57:42 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <libft_bonus.h>
+#include <stdlib.h>
 
-int     ft_strnequ(char const *s1, char const *s2, size_t n)
+void    ft_memdel(void **ap)
 {
-    if (!n || (!*s1 && !*s2))
-        return (1);
-    if (*s1 != *s2)
-        return (0);
-    return (ft_strnequ(s1 + 1, s2 + 1, n - 1));
+    free(*ap);
+    *ap = NULL;
 }

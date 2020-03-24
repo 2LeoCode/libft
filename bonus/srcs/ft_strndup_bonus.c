@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strndup_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/23 18:22:26 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/23 22:43:26 by lsuardi          ###   ########.fr       */
+/*   Created: 2020/03/23 18:45:27 by lsuardi           #+#    #+#             */
+/*   Updated: 2020/03/24 18:18:27 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <libft_bonus.h>
+#include <stdlib.h>
 
-char    *ft_strcat(char *s1, const char *s2)
+char    *ft_strndup(const char *s1, size_t n)
 {
-    if (!*s1)
-        return (ft_strcpy(s1, s2));
-    return (ft_strcat(s1 + 1, s2) - sizeof(char));
+    char *tmp;
+
+
+    if (!(tmp = (char*)malloc(sizeof(char) * (n + 1))))
+        return NULL;
+    ft_strncpy(tmp, s1, n);
+    tmp[n] = 0;
+    return (tmp);
 }

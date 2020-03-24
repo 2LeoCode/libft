@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_streq.c                                         :+:      :+:    :+:   */
+/*   ft_strncpy_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/23 18:22:56 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/23 18:25:47 by lsuardi          ###   ########.fr       */
+/*   Created: 2020/03/23 18:23:57 by lsuardi           #+#    #+#             */
+/*   Updated: 2020/03/24 16:58:38 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <libft_bonus.h>
 
-int     ft_strequ(char const *s1, char const *s2)
+char    *ft_strncpy(char *dst, const char *src, size_t len)
 {
-    if (!*s1 && !*s2)
-        return (1);
-    if (*s1 != *s2)
-        return (0);
-    return (ft_strequ(s1 + 1, s2 + 1));
+    if (!len)
+        return (dst);
+    *dst = *src;
+    if (!*src)
+        *dst = 0;
+    return (ft_strncpy(dst + 1, src + 1, len - 1));
 }

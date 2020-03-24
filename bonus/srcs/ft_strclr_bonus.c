@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strclr_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/23 18:22:43 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/23 19:02:34 by lsuardi          ###   ########.fr       */
+/*   Created: 2020/03/23 18:22:39 by lsuardi           #+#    #+#             */
+/*   Updated: 2020/03/24 16:58:12 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <libft_bonus.h>
 
-int     ft_strcmp(const char *s1, const char *s2)
+void    ft_strclr(char *s)
 {
-    if (!*s1 || !*s2 || *s1 != *s2)
-        return (*s1 - *s2);
-    return (ft_strcmp(s1 + 1, s2 + 1));
+    if (!*s)
+        return ;
+    *s = 0;
+    return (ft_strclr(s + 1));
 }

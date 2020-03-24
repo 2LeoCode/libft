@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_striter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/23 18:22:39 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/23 18:22:40 by lsuardi          ###   ########.fr       */
+/*   Created: 2020/03/23 18:22:59 by lsuardi           #+#    #+#             */
+/*   Updated: 2020/03/24 16:58:25 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <libft_bonus.h>
 
-void    ft_strclr(char *s)
+void    ft_striter(char *s, void (*f)(char *))
 {
     if (!*s)
         return ;
-    *s = 0;
-    return (ft_strclr(s + 1));
+    (*f)(s);
+    ft_striter(s + 1, f);
 }
+

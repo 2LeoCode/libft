@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strcat_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/23 18:22:50 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/23 18:22:51 by lsuardi          ###   ########.fr       */
+/*   Created: 2020/03/23 18:22:26 by lsuardi           #+#    #+#             */
+/*   Updated: 2020/03/24 16:58:02 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <libft_bonus.h>
 
-void    ft_strdel(char **as)
+char    *ft_strcat(char *s1, const char *s2)
 {
-    ft_memdel((void**)as);
+    if (!*s1)
+        return (ft_strcpy(s1, s2));
+    return (ft_strcat(s1 + 1, s2) - sizeof(char));
 }

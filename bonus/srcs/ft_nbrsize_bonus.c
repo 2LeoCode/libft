@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_nbrsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/23 18:24:00 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/23 18:24:00 by lsuardi          ###   ########.fr       */
+/*   Created: 2020/03/23 23:22:54 by lsuardi           #+#    #+#             */
+/*   Updated: 2020/03/24 16:57:47 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <libft_bonus.h>
 
-char    *ft_strnew(size_t size)
+int     ft_nbrsize(int n)
 {
-    return ((char*)ft_memalloc(size * sizeof(char)));
+    if (!n)
+        return (0);
+    return (ft_nbrsize(n / 10));
 }

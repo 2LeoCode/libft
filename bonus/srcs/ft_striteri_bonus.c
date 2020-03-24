@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_striteri_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/23 18:21:53 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/23 18:21:53 by lsuardi          ###   ########.fr       */
+/*   Created: 2020/03/23 18:23:15 by lsuardi           #+#    #+#             */
+/*   Updated: 2020/03/24 17:52:08 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdlib.h>
+#include <libft_bonus.h>
 
-void    *ft_memalloc(size_t size)
+void    ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-    void *tmp;
-    char *init;
+    int i;
 
-    if (!(tmp = malloc(size)))
-        return (NULL);
-    init = (char*)tmp;
-    while (--size >= 0)
-        init[size] = 0;
-    return (tmp);
+    i = -1;
+    while (s[++i])
+        (*f)(i, &s[i]);
 }

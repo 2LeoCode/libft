@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:22:22 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/23 19:04:37 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/24 14:32:30 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,5 @@ void    *ft_memset(void *b, int c, size_t len)
     if (!len)
         return (b);
     *tmp = (unsigned char)c;
-    b = tmp;
     return (ft_memset(b + 1, c, len - 1));
 }

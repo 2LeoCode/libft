@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*   ft_sqrt_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/23 18:45:27 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/23 19:01:41 by lsuardi          ###   ########.fr       */
+/*   Created: 2020/03/24 00:23:14 by lsuardi           #+#    #+#             */
+/*   Updated: 2020/03/24 16:57:58 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <libft_bonus.h>
 
-char    *ft_strndup(const char *s1, size_t len)
+double  ft_sqrt(double x)
 {
-    char *tmp;
+    double calc;
+    double diff;
 
-    if (!(tmp = ft_strnew(sizeof(char) * (len + 1))))
-        return (NULL);
-    ft_strncpy(tmp, s1, len);
-    tmp[len] = 0;
-    return (tmp);
+    if (!x)
+        return (0);
+    if (x < 0)
+        return (NAN);
+    diff = x;
+    calc = 0.5 * (x + x / x);
+    while (diff != calc)
+    {
+        diff = calc;
+        calc = 0.5 * (calc + x / calc);
+    }
+    return (calc);
 }

@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:21:22 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/23 18:21:23 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/24 17:39:39 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int     ft_isalnum(int c)
 {
     if (ft_isalpha(c) || ft_isdigit(c))
-        retrurn (1);
+        return (1);
     return (0);
 }

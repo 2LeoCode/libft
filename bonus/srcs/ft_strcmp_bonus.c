@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_listclear.c                                     :+:      :+:    :+:   */
+/*   ft_strcmp_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/24 02:30:28 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/24 02:38:16 by lsuardi          ###   ########.fr       */
+/*   Created: 2020/03/23 18:22:43 by lsuardi           #+#    #+#             */
+/*   Updated: 2020/03/24 16:58:17 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <libft_bonus.h>
 
-void    ft_lstclear(t_list **lst, void (*del)(void *))
+int     ft_strcmp(const char *s1, const char *s2)
 {
-    t_list *prev;
-    t_list *head;
-
-    prev = (*lst)->next;
-    head = prev->next;
-    ft_lstdelone(*lst, del);
-    *lst = NULL;
-    while (prev)
-    {
-        ft_lstdelone(prev, del);
-        prev = head;
-        head = head->next;
-    }
+    if (!*s1 || !*s2 || *s1 != *s2)
+        return (*s1 - *s2);
+    return (ft_strcmp(s1 + 1, s2 + 1));
 }

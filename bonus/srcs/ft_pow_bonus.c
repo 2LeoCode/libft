@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_pow_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/24 00:23:14 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/24 01:09:12 by lsuardi          ###   ########.fr       */
+/*   Created: 2020/03/23 23:42:10 by lsuardi           #+#    #+#             */
+/*   Updated: 2020/03/24 16:57:53 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <libft_bonus.h>
 
-double  ft_sqrt(double x)
+double  ft_pow(double x, double y)
 {
-    double calc;
-    double diff;
-
-    if (!x)
-        return (0);
-    if (x < 0)
-        return (NAN);
-    diff = x;
-    calc = 0.5 * (x + x / x);
-    while (diff != calc)
-    {
-        diff = calc;
-        calc = 0.5 * (calc + x / calc);
-    }
-    return (calc);
+    if (y < 1)
+        return (1);
+    return (x * ft_pow(x, y - 1));
 }

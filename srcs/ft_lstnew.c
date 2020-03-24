@@ -6,11 +6,12 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 02:08:10 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/24 02:11:53 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/24 18:57:13 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <stdlib.h>
 
 t_list  *ft_lstnew(void *content)
 {

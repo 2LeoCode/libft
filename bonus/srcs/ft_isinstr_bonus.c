@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_isinstr_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/23 18:23:50 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/23 22:44:03 by lsuardi          ###   ########.fr       */
+/*   Created: 2020/03/23 19:51:17 by lsuardi           #+#    #+#             */
+/*   Updated: 2020/03/24 16:57:32 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <libft_bonus.h>
 
-char    *ft_strncat(char *s1, const char *s2, size_t n)
+int     ft_isinstr(char const c, char const *str)
 {
-    if (!*s1)
-        return (ft_strncpy(s1, s2, n));
-    return (ft_strncat(s1 + 1, s2, n) - sizeof(char));
+    if (!*str)
+        return (0);
+    if (c == *str)
+        return (1);
+    return (ft_isinstr(c, str + 1));
 }

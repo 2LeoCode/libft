@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/23 18:22:59 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/23 18:23:00 by lsuardi          ###   ########.fr       */
+/*   Created: 2020/03/23 18:22:29 by lsuardi           #+#    #+#             */
+/*   Updated: 2020/03/24 17:57:42 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void    ft_striter(char *s, void (*f)(char *))
+char    *ft_strrchr(const char *s, int c)
 {
     if (!*s)
-        return ;
-    (*f)(s);
-    ft_striter(s + 1, f);
+        return (c ? NULL : (char*)s);
+    if (*s == (char)c)
+        if (!ft_strrchr(s + 1, c))
+            return ((char*)s);
+    return (ft_strrchr(s + 1, c));
 }
-

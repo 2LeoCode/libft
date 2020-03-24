@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/23 18:23:57 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/23 18:48:45 by lsuardi          ###   ########.fr       */
+/*   Created: 2020/03/23 18:23:42 by lsuardi           #+#    #+#             */
+/*   Updated: 2020/03/24 18:19:53 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <libft_bonus.h>
+#include <stdlib.h>
 
-char    *ft_strncpy(char *dst, const char *src, size_t len)
+char    *ft_strmap(char const *s, char (*f)(char))
 {
-    if (!len)
-        return (dst);
-    *dst = *src;
-    if (!*src)
-        *dst = 0;
-    return (ft_strncpy(dst + 1, src + 1, len - 1));
+    char    *new;
+    int     i;
+
+    if (!(new = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+        return NULL;
+    i = -1;
+    while (s[++i])
+        new[i] = (*f)(s[i]);
+    new[i] = 0;
+    return (new);
 }
