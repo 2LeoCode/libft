@@ -6,7 +6,7 @@
 #    By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/24 15:26:22 by lsuardi           #+#    #+#              #
-#    Updated: 2020/03/24 19:08:13 by lsuardi          ###   ########.fr        #
+#    Updated: 2020/03/25 00:30:25 by lsuardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,8 +28,11 @@ BSRCS			= ${addsuffix _bonus.c, $(_BSRCS_PRE)}
 BOBJ			= ${BSRCS:.c=.o}
 export CFLAGS	= -Wall -Wextra -Werror
 
-all: ${NAME}
+all: msg ${NAME}
 	@(ranlib ${NAME} && echo 'Successfuly created ${NAME}')
+
+msg:
+	@echo Compiling...
 
 ${NAME}: ${OBJ}
 	@(ar rc $@ $^ && echo 'C files compiled')

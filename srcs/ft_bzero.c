@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:21:18 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/24 17:08:30 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/24 23:30:42 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 void    ft_bzero(void *s, size_t n)
 {
-    int *tmp;
+    char *tmp;
 
-    tmp = (int*)s;
+    tmp = (char*)s;
     if (!n)
         return ;
     *tmp = 0;
-    s = tmp;
-    ft_bzero(s + 1, n - 1);
+    ft_bzero(s + sizeof(char), n - 1);
 }
