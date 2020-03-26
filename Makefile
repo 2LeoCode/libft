@@ -6,15 +6,15 @@
 #    By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/24 15:26:22 by lsuardi           #+#    #+#              #
-#    Updated: 2020/03/25 00:30:25 by lsuardi          ###   ########.fr        #
+#    Updated: 2020/03/26 16:45:34 by lsuardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= libft.a
 _SRCS			= ft_atoi ft_bzero ft_calloc ft_isalnum ft_isalpha ft_isascii\
-ft_isdigit ft_isprint ft_itoa ft_memccpy ft_memchr ft_memcmp ft_memcpy\
-ft_memmove ft_memset ft_putchar_fd ft_putendl_fd ft_putnbr_fd ft_putstr_fd\
-ft_split ft_strrchr ft_strchr ft_strcpy ft_strdup ft_lstadd_back ft_lstadd_front\
+ft_isdigit ft_isprint ft_itoa ft_memccpy ft_memchr ft_memcmp ft_memcpy ft_strlen\
+ft_memmove ft_memset ft_putchar_fd ft_putendl_fd ft_strncmp ft_putnbr_fd ft_putstr_fd\
+ft_split ft_strlcpy ft_strrchr ft_strchr ft_strcpy ft_strdup ft_lstadd_back ft_lstadd_front\
 ft_strjoin ft_strlcat ft_strnstr ft_strstr ft_strtrim ft_substr ft_tolower\
 ft_toupper ft_lstclear ft_lstdelone ft_lstiter ft_lstlast ft_lstnew ft_lstmap
 _SRCS_PRE		= ${addprefix srcs/, $(_SRCS)}

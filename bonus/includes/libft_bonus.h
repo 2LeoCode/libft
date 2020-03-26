@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 19:28:33 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/24 19:28:34 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/26 00:07:55 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # endif
 
 # ifndef NAN
-#  define NAN __builtin_nanf("0x7fc00000")
+#  define NAN (0.0 / 0.0)
 # endif
 
 typedef unsigned long size_t;
