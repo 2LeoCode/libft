@@ -6,15 +6,15 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:21:32 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/23 18:21:32 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/27 17:29:49 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int     ft_isascii(int c)
+int		ft_isascii(int c)
 {
-    if ((char)c < 0 || (char)c > 127)
-        return (0);
-    return(1);
+	if ((char)c < 0 || (char)c > 127)
+		return (0);
+	return (1);
 }

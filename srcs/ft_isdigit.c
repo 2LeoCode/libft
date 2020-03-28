@@ -6,15 +6,15 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:21:36 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/23 18:21:36 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/27 17:30:55 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int     ft_isdigit(int c)
+int		ft_isdigit(int c)
 {
-    if ((char)c < '0' || (char)c > '9')
-        return (0);
-    return (1);
+	if ((char)c < '0' || (char)c > '9')
+		return (0);
+	return (1);
 }

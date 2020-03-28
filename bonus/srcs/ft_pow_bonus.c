@@ -6,15 +6,15 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 23:42:10 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/24 16:57:53 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/28 16:20:30 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft_bonus.h>
 
-double  ft_pow(double x, double y)
+double	ft_pow(double x, double y)
 {
-    if (y < 1)
-        return (1);
-    return (x * ft_pow(x, y - 1));
+	if (y < 1)
+		return (1);
+	return (x * ft_pow(x, y - 1));
 }

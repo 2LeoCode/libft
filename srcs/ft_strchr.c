@@ -6,15 +6,15 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:22:37 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/24 17:58:32 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/27 17:44:28 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-char    *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-    if (!*s)
-        return (c ? NULL : (char*)s);
-    return ((*s == (char)c) ? (char*)s : ft_strchr(s + 1, c));
+	if (!*s)
+		return (c ? NULL : (char*)s);
+	return ((*s == (char)c) ? (char*)s : ft_strchr(s + 1, c));
 }

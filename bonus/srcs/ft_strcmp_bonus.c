@@ -6,15 +6,15 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:22:43 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/24 16:58:17 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/28 16:21:21 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft_bonus.h>
 
-int     ft_strcmp(const char *s1, const char *s2)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-    if (!*s1 || !*s2 || *s1 != *s2)
-        return (*s1 - *s2);
-    return (ft_strcmp(s1 + 1, s2 + 1));
+	if (!*s1 || !*s2 || *s1 != *s2)
+		return (*s1 - *s2);
+	return (ft_strcmp(s1 + 1, s2 + 1));
 }

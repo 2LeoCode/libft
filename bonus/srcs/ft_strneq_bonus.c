@@ -6,17 +6,13 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:30:36 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/24 16:58:47 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/28 16:24:59 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft_bonus.h>
 
-int     ft_strnequ(char const *s1, char const *s2, size_t n)
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-    if (!n || (!*s1 && !*s2))
-        return (1);
-    if (*s1 != *s2)
-        return (0);
-    return (ft_strnequ(s1 + 1, s2 + 1, n - 1));
+	return (!ft_strncmp(s1, s2, n));
 }

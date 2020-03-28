@@ -6,15 +6,15 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:21:46 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/26 15:24:20 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/27 17:31:08 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int     ft_isprint(int c)
+int		ft_isprint(int c)
 {
-    if ((char)c < ' ' || (char)c > '~')
-        return (0);
-    return (1);
+	if ((char)c < ' ' || (char)c > '~')
+		return (0);
+	return (1);
 }

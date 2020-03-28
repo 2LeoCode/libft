@@ -6,19 +6,19 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:21:18 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/24 23:30:42 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/27 17:33:04 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void    ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    char *tmp;
+	char	*tmp;
 
-    tmp = (char*)s;
-    if (!n)
-        return ;
-    *tmp = 0;
-    ft_bzero(s + sizeof(char), n - 1);
+	tmp = (char*)s;
+	if (!n)
+		return ;
+	*tmp = 0;
+	ft_bzero(s + sizeof(char), n - 1);
 }

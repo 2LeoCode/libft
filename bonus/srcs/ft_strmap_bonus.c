@@ -6,23 +6,23 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:23:42 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/24 18:19:53 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/28 16:22:31 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft_bonus.h>
 #include <stdlib.h>
 
-char    *ft_strmap(char const *s, char (*f)(char))
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-    char    *new;
-    int     i;
+	char	*new;
+	int		i;
 
-    if (!(new = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1))))
-        return NULL;
-    i = -1;
-    while (s[++i])
-        new[i] = (*f)(s[i]);
-    new[i] = 0;
-    return (new);
+	if (!(new = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+		return (NULL);
+	i = -1;
+	while (s[++i])
+		new[i] = (*f)(s[i]);
+	new[i] = 0;
+	return (new);
 }

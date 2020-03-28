@@ -6,15 +6,15 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 23:22:54 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/24 16:57:47 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/28 16:20:18 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft_bonus.h>
 
-int     ft_nbrsize(int n)
+int		ft_nbrsize(int n)
 {
-    if (!n)
-        return (0);
-    return (ft_nbrsize(n / 10));
+	if (!n)
+		return (0);
+	return (ft_nbrsize(n / 10));
 }

@@ -6,17 +6,17 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 01:17:12 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/24 01:19:19 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/27 17:42:43 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 #include <unistd.h>
 
-void    ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-    if (!*s)
-        return ;
-    write(fd, s, 1);
-    ft_putstr_fd(s + 1, fd);
+	if (!*s)
+		return ;
+	write(fd, s, 1);
+	ft_putstr_fd(s + 1, fd);
 }
