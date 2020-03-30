@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strrm_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/23 18:23:47 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/29 17:46:18 by lsuardi          ###   ########.fr       */
+/*   Created: 2020/03/29 17:42:42 by lsuardi           #+#    #+#             */
+/*   Updated: 2020/03/29 17:46:56 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <libft_bonus.h>
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char		*ft_strrm(char const *s1, char const *set)
 {
-	char	*new;
 	int		i;
+	int		cur;
+	size_t	size;
+	char	*new;
 
-	if (!(new = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+	i = 0;
+	size = 0;
+	while (s1[i])
+		if (!ft_isinstr(s1[i++], set))
+			size++;
+	if (!(new = (char *)malloc(sizeof(char) * (size + 1))))
 		return (NULL);
 	i = -1;
-	while (s[++i])
-		new[i] = (*f)((unsigned int)i, s[i]);
-	new[i] = 0;
+	cur = 0;
+	while (s1[++i])
+		if (!ft_isinstr(s1[i], set))
+			new[cur++] = s1[i];
+	new[cur] = 0;
 	return (new);
 }

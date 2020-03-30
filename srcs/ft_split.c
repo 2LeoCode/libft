@@ -6,12 +6,11 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 22:48:01 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/27 17:44:17 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/30 14:53:33 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdlib.h>
+#include "libft.h"
 
 static char		*ft_strncpy(char *dst, const char *src, size_t len)
 {
@@ -43,26 +42,32 @@ static size_t	ft_splitsize(const char *s, char c)
 	return (ft_splitsize(s + 1, c));
 }
 
-static size_t	ft_splitlen(char const *s, char c)
+static size_t	ft_splitlen(const char *s, char c)
 {
-	return ((*s == c) ? 0 : (1 + ft_splitlen(s + 1, c)));
+	if (!*s || *s == c)
+		return (0);
+	return (1 + ft_splitlen(s + 1, c));
 }
 
 char			**ft_split(char const *s, char c)
 {
 	char	**tab;
-	size_t	i;
-	int		j;
+	int		i;
+	size_t	size;
 
-	if (!(tab = (char **)malloc(sizeof(char *) * ft_splitsize(s, c))))
+	while (*s == c)
+		s++;
+	size = ft_splitsize(s, c);
+	if (!(tab = (char**)malloc(sizeof(char*) * (size + 1))))
 		return (NULL);
 	i = 0;
-	j = 0;
-	while (i < ft_splitsize(s, c))
+	while (i < (int)size)
 	{
-		if (!(tab[i] = ft_strndup(&s[j], ft_splitlen(&s[j], c))))
+		if (!(tab[i] = ft_strndup(s, ft_splitlen(s, c))))
 			return (NULL);
-		j += ft_strlen(tab[i]) + 1;
+		i++;
+		s += (ft_splitlen(s, c) + 1);
 	}
+	tab[i] = NULL;
 	return (tab);
 }

@@ -6,14 +6,13 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 23:20:51 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/27 17:32:05 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/30 15:09:42 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <stdlib.h>
 
-static void	ft_placenbr(int nb, char *s, int size)
+static void	ft_placenbr(long nb, char *s, int size)
 {
 	if (!size)
 		return ;
@@ -25,7 +24,7 @@ static int	ft_nbrsize(int n)
 {
 	if (!n)
 		return (0);
-	return (ft_nbrsize(n / 10));
+	return (1 + ft_nbrsize(n / 10));
 }
 
 char		*ft_itoa(int n)
@@ -34,7 +33,8 @@ char		*ft_itoa(int n)
 	long	nb;
 	int		size;
 
-	size = ft_nbrsize(n);
+	if (!(size = ft_nbrsize(n)))
+		size = 1;
 	nb = n;
 	if (!(str = malloc(size + ((n < 0) ? 2 : 1))))
 		return (NULL);

@@ -6,12 +6,11 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:55:40 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/27 17:46:19 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/29 17:46:08 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <stdlib.h>
 
 static char	*ft_strcat(char *s1, const char *s2)
 {

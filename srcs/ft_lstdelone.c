@@ -6,12 +6,11 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 02:26:01 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/27 17:33:55 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/29 17:44:15 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <stdlib.h>
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
