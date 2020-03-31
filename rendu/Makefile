@@ -19,7 +19,7 @@ ft_strjoin ft_strlcat ft_strnstr ft_strstr ft_strtrim ft_substr ft_tolower ft_st
 ft_toupper ft_lstclear ft_lstdelone ft_lstiter ft_lstlast ft_lstnew ft_lstmap
 _SRCS_PRE		= ${addprefix srcs/, $(_SRCS)}
 SRCS			= ${addsuffix .c, $(_SRCS_PRE)}
-OBJ				= ${SRCS:.c=.o}
+OBJ			= ${SRCS:.c=.o}
 _BSRCS			= ft_strndup ft_memalloc ft_memdel ft_strclr ft_striter\
 ft_striteri ft_strmap ft_streq ft_strneq ft_isinstr ft_nbrsize ft_pow\
 ft_sqrt ft_strncat ft_strcat ft_strcmp ft_strncpy ft_filesize ft_filetoa
