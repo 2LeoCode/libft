@@ -6,7 +6,7 @@
 #    By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/24 15:26:22 by lsuardi           #+#    #+#              #
-#    Updated: 2020/03/27 16:18:08 by lsuardi          ###   ########.fr        #
+#    Updated: 2020/03/31 03:05:28 by lsuardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRCS			= ${addsuffix .c, $(_SRCS_PRE)}
 OBJ				= ${SRCS:.c=.o}
 _BSRCS			= ft_strndup ft_memalloc ft_memdel ft_strclr ft_striter\
 ft_striteri ft_strmap ft_streq ft_strneq ft_isinstr ft_nbrsize ft_pow\
-ft_sqrt ft_strncat ft_strcat ft_strcmp ft_strncpy
+ft_sqrt ft_strncat ft_strcat ft_strcmp ft_strncpy ft_filesize ft_filetoa
 _BSRCS_PRE		= ${addprefix bonus/srcs/, $(_BSRCS)}
 BSRCS			= ${addsuffix _bonus.c, $(_BSRCS_PRE)}
 BOBJ			= ${BSRCS:.c=.o}
