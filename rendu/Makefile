@@ -6,7 +6,7 @@
 #    By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/24 15:26:22 by lsuardi           #+#    #+#              #
-#    Updated: 2020/03/31 03:09:43 by lsuardi          ###   ########.fr        #
+#    Updated: 2020/03/31 03:34:48 by lsuardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,10 @@ _BSRCS_PRE		= ${addprefix bonus/srcs/, $(_BSRCS)}
 BSRCS			= ${addsuffix _bonus.c, $(_BSRCS_PRE)}
 BOBJ			= ${BSRCS:.c=.o}
 export CFLAGS	= -Wall -Wextra -Werror
+B_TARGET		= msg
+ifeq ("${wildcard $(NAME)}","")
+    B_TARGET += all
+endif
 
 all: msg ${NAME}
 	@(ranlib ${NAME} && echo 'Successfuly created ${NAME}')
@@ -37,7 +41,7 @@ msg:
 ${NAME}: ${OBJ}
 	@(ar rc $@ $^ && echo 'C files compiled')
 
-bonus: msg
+bonus: ${B_TARGET}
 	@(cd bonus && ${MAKE} && cd .. && ar rcs ${NAME} ${BOBJ})
 
 %.o: %.c
