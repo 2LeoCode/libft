@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/31 02:22:23 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/31 02:42:23 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/31 03:07:59 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <fcntl.h>
 #include <errno.h>
 #include <string.h>
+#include <unistd.h>
 
 size_t	ft_filesize(char *path)
 {

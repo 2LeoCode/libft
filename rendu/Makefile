@@ -6,7 +6,7 @@
 #    By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/24 15:26:22 by lsuardi           #+#    #+#              #
-#    Updated: 2020/03/31 03:05:28 by lsuardi          ###   ########.fr        #
+#    Updated: 2020/03/31 03:09:43 by lsuardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ msg:
 ${NAME}: ${OBJ}
 	@(ar rc $@ $^ && echo 'C files compiled')
 
-bonus: all
+bonus: msg
 	@(cd bonus && ${MAKE} && cd .. && ar rcs ${NAME} ${BOBJ})
 
 %.o: %.c

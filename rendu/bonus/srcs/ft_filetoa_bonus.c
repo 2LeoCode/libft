@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/31 02:33:02 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/31 02:48:18 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/03/31 03:08:05 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <fcntl.h>
 #include <errno.h>
 #include <string.h>
+#include <unistd.h>
 
 char	*ft_filetoa(char *path)
 {

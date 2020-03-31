@@ -6,7 +6,7 @@
 #    By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/24 15:26:17 by lsuardi           #+#    #+#              #
-#    Updated: 2020/03/31 03:05:19 by lsuardi          ###   ########.fr        #
+#    Updated: 2020/03/31 03:11:52 by lsuardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS		= ${addsuffix _bonus.c, $(_SRCS_PRE)}
 OBJ			= ${SRCS:.c=.o}
 
 all: ${OBJ}
-	@echo 'Bonus files added'
+	@echo 'Bonus files added to libft.a'
 
 %.o: %.c
 	@gcc ${CFLAGS} -c $< -o $@ -I includes
