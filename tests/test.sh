@@ -6,7 +6,7 @@
 #    By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/24 22:36:05 by lsuardi           #+#    #+#              #
-#    Updated: 2020/03/30 18:14:03 by lsuardi          ###   ########.fr        #
+#    Updated: 2020/04/27 22:18:13 by lsuardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ strlcpy.sh strlcat.sh strchr.sh strrchr.sh strstr.sh strnstr.sh strncmp.sh atoi.
 isascii.sh toupper.sh tolower.sh strmapi.sh substr.sh strjoin.sh strtrim.sh \
 putstr_fd.sh putendl_fd.sh putnbr_fd.sh strlen.sh strdup.sh strcpy.sh isalpha.sh \
 isdigit.sh isalnum.sh split.sh itoa.sh putchar_fd.sh"
-bonuslist='lstnew.sh lstadd_front.sh lstlast.sh lstdelone.sh lstclear.sh lstiter.sh lstmap.sh'
+bonuslist='lstnew.sh lstadd_back.sh lstadd_front.sh lstlast.sh lstdelone.sh lstclear.sh lstiter.sh lstmap.sh'
 
 bonus=1
 
