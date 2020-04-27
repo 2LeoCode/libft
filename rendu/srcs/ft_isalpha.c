@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:21:26 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/27 17:29:19 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/04/28 01:03:43 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_isalpha(int c)
 {
-	if ((char)c < 'A' || ((char)c > 'Z' && (char)c < 'a') || (char)c > 'z')
+	if (c < (int)'A' || (c > (int)'Z' && c < (int)'a') || c > (int)'z')
 		return (0);
 	return (1);
 }
