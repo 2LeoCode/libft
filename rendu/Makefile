@@ -6,11 +6,12 @@
 #    By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/24 15:26:22 by lsuardi           #+#    #+#              #
-#    Updated: 2020/03/31 03:34:48 by lsuardi          ###   ########.fr        #
+#    Updated: 2020/04/27 18:04:24 by lsuardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= libft.a
+export NAME		= libft.a
+export CFLAGS	= -Wall -Wextra -Werror
 _SRCS			= ft_atoi ft_bzero ft_calloc ft_isalnum ft_isalpha ft_isascii\
 ft_isdigit ft_isprint ft_itoa ft_memccpy ft_memchr ft_memcmp ft_memcpy ft_strlen\
 ft_memmove ft_memset ft_putchar_fd ft_putendl_fd ft_strncmp ft_putnbr_fd ft_putstr_fd\
@@ -19,38 +20,29 @@ ft_strjoin ft_strlcat ft_strnstr ft_strstr ft_strtrim ft_substr ft_tolower ft_st
 ft_toupper ft_lstclear ft_lstdelone ft_lstiter ft_lstlast ft_lstnew ft_lstmap
 _SRCS_PRE		= ${addprefix srcs/, $(_SRCS)}
 SRCS			= ${addsuffix .c, $(_SRCS_PRE)}
-OBJ			= ${SRCS:.c=.o}
-_BSRCS			= ft_strndup ft_memalloc ft_memdel ft_strclr ft_striter\
-ft_striteri ft_strmap ft_streq ft_strneq ft_isinstr ft_nbrsize ft_pow\
-ft_sqrt ft_strncat ft_strcat ft_strcmp ft_strncpy ft_filesize ft_filetoa
-_BSRCS_PRE		= ${addprefix bonus/srcs/, $(_BSRCS)}
-BSRCS			= ${addsuffix _bonus.c, $(_BSRCS_PRE)}
-BOBJ			= ${BSRCS:.c=.o}
-export CFLAGS	= -Wall -Wextra -Werror
-B_TARGET		= msg
-ifeq ("${wildcard $(NAME)}","")
-    B_TARGET += all
+OBJ				= ${SRCS:.c=.o}
+B_TARGET		=
+
+ifeq ("${wildcard $(NAME)}", "")
+	B_TARGET = all
 endif
 
-all: msg ${NAME}
+all: ${NAME}
 	@(ranlib ${NAME} && echo 'Successfuly created ${NAME}')
 
-msg:
-	@echo Compiling...
-
 ${NAME}: ${OBJ}
-	@(ar rc $@ $^ && echo 'C files compiled')
+	@(echo 'C files compiled' && ar rc $@ $^)
 
 bonus: ${B_TARGET}
-	@(cd bonus && ${MAKE} && cd .. && ar rcs ${NAME} ${BOBJ})
+	@(cd bonus_files && ${MAKE} && cd ..)
 
 %.o: %.c
-	@gcc ${CFLAGS} -c $< -o $@ -I includes
+	@(echo 'Compiling $<...' && gcc ${CFLAGS} -c $< -o $@ -I includes)
 
 clean:
-	@(rm -f srcs/*.o && cd bonus && ${MAKE} $@ && echo 'Objects removed')
+	@(${foreach i, $(wildcard */*.o */*/*.o), echo 'Removing $(i)...' && rm -f $(i);} echo 'Removed objects')
 
 fclean: clean
-	@(rm -f ${NAME} && echo 'Removed ${NAME}')
+	@(echo 'Removing ${NAME}...' && rm -f ${NAME} && echo 'Removed ${NAME}')
 
 re: fclean all
