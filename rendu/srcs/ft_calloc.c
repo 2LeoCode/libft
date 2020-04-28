@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 19:40:52 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/29 17:43:56 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/04/28 16:48:08 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	*ft_calloc(size_t count, size_t size)
 
 	if (!(new = malloc(size * count)))
 		return (NULL);
-	ft_bzero(&new, size * count);
+	ft_bzero(new, size * count);
 	return (new);
 }

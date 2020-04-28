@@ -6,56 +6,48 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 19:18:57 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/31 02:44:03 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/04/28 20:03:01 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-char	*ft_strcat(char *s1, const char *s2)
+static void		ft_swap(char *a, char *b)
 {
-	if (!*s1)
-		return (ft_strcpy(s1, s2));
-	return (ft_strcat(s1 + 1, s2) - 1);
+	char	tmp;
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
 
-int		ft_strcmp(const char *s1, const char *s2)
+static void		ft_strrev(char *str)
 {
-	if (!*s1 || !*s2 || *s1 != *s2)
-		return (*s1 - *s2);
-	return (ft_strcmp(s1 + 1, s2 + 1));
-}
+	size_t	len;
+	size_t	i;
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
-{
-	if (!len)
-		return (dst);
-	*dst = *src;
-	if (!*src)
-		*dst = 0;
-	return (ft_strncpy(dst + 1, src + 1, len - 1) - 1);
-}
-
-char	*ft_strtrim(char const *s1, char const *set)
-{
-	char	*new;
-	int		size;
-
-	size = ft_strlen(s1);
-	if (!ft_strncmp(s1, set, ft_strlen(set)))
+	len = ft_strlen(str);
+	i = 0;
+	while (i < (len / 2))
 	{
-		size -= ft_strlen(set);
-		s1 += ft_strlen(set);
+		ft_swap(&str[i], &str[len - 1 - i]);
+		i++;
 	}
-	if (!ft_strcmp(s1 + ft_strlen(s1) - ft_strlen(set), set))
-		size -= ft_strlen(set);
-	if (!(new = (char*)malloc(sizeof(char) * (size + 1))))
-		return (NULL);
-	ft_strncpy(new, s1, ft_strlen(s1) - ft_strlen(set));
-	s1 += (ft_strlen(s1) - ft_strlen(set));
-	if (!ft_strcmp(s1, set))
-		return (new);
-	ft_strcat(new, s1);
-	new[size] = 0;
-	return (new);
+}
+
+char			*ft_strtrim(char const *s1, char const *set)
+{
+	char	*str;
+
+	str = (char*)s1;
+	while (ft_strchr(set, (int)*str))
+	{
+		if (!*str)
+			return (ft_strdup(str));
+		str++;
+	}
+	ft_strrev(str);
+	while (ft_strchr(set, (int)*str))
+		str++;
+	ft_strrev(str);
+	return (ft_strdup(str));
 }

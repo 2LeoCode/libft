@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:22:13 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/27 17:39:57 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/04/28 16:56:54 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	int			*d;
-	const int	*s;
+	char		*d;
+	const char	*s;
 
-	d = (int *)dst;
-	s = (int *)src;
+	d = (char *)dst;
+	s = (const char *)src;
 	if (!n)
 		return (dst);
 	*d = *s;
