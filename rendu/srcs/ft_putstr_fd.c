@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 01:17:12 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/29 17:45:50 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/04/29 19:50:41 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (!*s)
+	if (!s || !*s || fd < 1)
 		return ;
 	write(fd, s, 1);
 	ft_putstr_fd(s + 1, fd);

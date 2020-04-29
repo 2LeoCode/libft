@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:24:19 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/27 17:49:32 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/04/29 21:19:01 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 char	*ft_strstr(const char *haystack, const char *needle)
 {
+	if (!*haystack && !*needle)
+		return ((char*)haystack);
 	if (!*haystack)
 		return (NULL);
 	if (!ft_strncmp(haystack, needle, ft_strlen(needle)))

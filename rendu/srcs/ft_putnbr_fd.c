@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 01:22:10 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/30 00:15:38 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/04/29 21:09:14 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	long nb;
 
+	if (fd < 1)
+		return ;
 	nb = (long)n;
 	if (nb < 0)
 	{

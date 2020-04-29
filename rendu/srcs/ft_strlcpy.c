@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:23:36 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/27 17:47:05 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/04/29 22:52:09 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
+	if (!src || !dst)
+		return (0);
 	if (!dstsize)
 		return (ft_strlen(src));
 	*dst = 0;

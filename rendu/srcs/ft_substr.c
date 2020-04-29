@@ -6,11 +6,19 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:33:56 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/29 17:46:32 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/04/29 22:53:36 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+
+static char		*ft_fillend(char *dst, int len)
+{
+	if (!len)
+		return (dst);
+	*dst = 0;
+	return (ft_fillend(dst + 1, len - 1) - 1);
+}
 
 static char		*ft_strncpy(char *dst, const char *src, size_t len)
 {
@@ -18,8 +26,8 @@ static char		*ft_strncpy(char *dst, const char *src, size_t len)
 		return (dst);
 	*dst = *src;
 	if (!*src)
-		*dst = 0;
-	return (ft_strncpy(dst + 1, src + 1, len - 1));
+		return (ft_fillend(dst + 1, len - 1));
+	return (ft_strncpy(dst + 1, src + 1, len - 1) - 1);
 }
 
 static char		*ft_strndup(const char *s1, size_t n)
@@ -35,7 +43,7 @@ static char		*ft_strndup(const char *s1, size_t n)
 
 char			*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	if (!*s)
+	if (!s || !*s)
 		return (NULL);
 	if (!start)
 		return (ft_strndup(s, len));

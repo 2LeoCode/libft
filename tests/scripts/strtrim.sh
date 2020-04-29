@@ -6,7 +6,7 @@
 #    By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/24 23:35:08 by lsuardi           #+#    #+#              #
-#    Updated: 2020/03/30 00:44:51 by lsuardi          ###   ########.fr        #
+#    Updated: 2020/04/29 18:54:27 by lsuardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ gcc -Wall -Wextra -Werror $name/test.c -o $name/test
 cd $name
 
 echo ">>> $name <<<"
-checkDiff lelbolelnjourlel lel
+checkDiff "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  " " \n\t"
 checkDiff lelbonjour lel
 checkDiff blelonjourlel lel
 checkDiff bonjleloulelr lel

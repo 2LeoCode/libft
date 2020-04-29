@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 22:48:01 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/04/28 18:30:47 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/04/29 22:25:58 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,11 @@ char			**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	size;
 
+	if (!s)
+		return (NULL);
 	size = ft_splitsize(s, c);
+	if (!size && *s != c)
+		size++;
 	if (!(tab = (char**)malloc(sizeof(char*) * (size + 1))))
 		return (NULL);
 	i = 0;
@@ -68,7 +72,7 @@ char			**ft_split(char const *s, char c)
 		if (!(tab[i] = ft_strndup(s, ft_splitlen(s, c))))
 			return (NULL);
 		i++;
-		s += (ft_splitlen(s, c));
+		s += ft_splitlen(s, c);
 	}
 	tab[i] = NULL;
 	return (tab);

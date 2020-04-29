@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:21:18 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/27 17:33:04 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/04/29 21:23:38 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ void	ft_bzero(void *s, size_t n)
 	if (!n)
 		return ;
 	*tmp = 0;
-	ft_bzero(s + sizeof(char), n - 1);
+	ft_bzero(s + 1, n - 1);
 }

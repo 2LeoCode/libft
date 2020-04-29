@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 19:28:33 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/31 02:41:17 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/04/29 22:55:23 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ typedef struct	s_list
 }				t_list;
 
 char			*ft_strndup(const char *s1, size_t n);
-void			ft_memalloc(void **target, size_t size);
 void			ft_memdel(void **ap);
 void			ft_strclr(char *s);
 void			ft_striter(char *s, void (*f)(char *));

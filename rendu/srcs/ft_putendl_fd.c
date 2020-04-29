@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 01:20:18 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/30 15:58:01 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/04/29 19:49:59 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	if (fd < 1)
+		return ;
 	ft_putstr_fd(s, fd);
 	write(fd, "\n", 1);
 }
