@@ -6,7 +6,7 @@
 #    By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/24 15:26:22 by lsuardi           #+#    #+#              #
-#    Updated: 2020/05/01 18:25:29 by lsuardi          ###   ########.fr        #
+#    Updated: 2020/05/02 20:59:08 by lsuardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ $(NAME): $(OBJ)
 	@(echo 'C files compiled' && ar rc $@ $^)
 
 bonus: $(B_TARGET) $(OBJ_BONUS)
-	@(ar rcs ${NAME} ${OBJ_BONUS} && echo 'Successfully added bonus files to library')
+	@(ar rcs $(NAME) $(OBJ_BONUS) && echo 'Successfully added bonus files to library')
 
 %_bonus.o: %_bonus.c
 	@(echo 'Compiling $<...' && gcc $(CFLAGS) -c $< -o $@ -I .)
