@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lsuardi <lsuardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 22:48:01 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/04/29 22:25:58 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/05/05 17:39:34 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
 static char		*ft_strncpy(char *dst, const char *src, size_t len)
 {
@@ -22,12 +22,24 @@ static char		*ft_strncpy(char *dst, const char *src, size_t len)
 	return (ft_strncpy(dst + 1, src + 1, len - 1));
 }
 
-static char		*ft_strndup(const char *s1, size_t n)
+static char		*ft_strndup_split(const char *s1, size_t n, char **tab, int cur)
 {
 	char	*tmp;
+	int		i;
 
 	if (!(tmp = (char *)malloc(sizeof(char) * (n + 1))))
+	{
+		i = 0;
+		while (i < cur)
+		{
+			free(tab[i]);
+			tab[i] = NULL;
+			i++;
+		}
+		free(tab);
+		tab = NULL;
 		return (NULL);
+	}
 	ft_strncpy(tmp, s1, n);
 	tmp[n] = 0;
 	return (tmp);
@@ -69,7 +81,7 @@ char			**ft_split(char const *s, char c)
 	{
 		while (*s == c)
 			s++;
-		if (!(tab[i] = ft_strndup(s, ft_splitlen(s, c))))
+		if (!(tab[i] = ft_strndup_split(s, ft_splitlen(s, c), tab, (int)i)))
 			return (NULL);
 		i++;
 		s += ft_splitlen(s, c);

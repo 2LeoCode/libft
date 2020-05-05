@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lsuardi <lsuardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 19:28:33 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/04/29 22:55:23 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/05/05 17:42:02 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 
 # define LIBFT_BONUS_H
 # include <stdlib.h>
-
-# ifndef NAN
-#  define NAN (0.0 / 0.0)
-# endif
 
 # ifndef STDERR
 #  define STDERR 2
