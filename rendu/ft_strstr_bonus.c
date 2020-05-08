@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strstr_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lsuardi <lsuardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:24:19 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/04/29 21:19:01 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/05/08 22:23:38 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <libft_bonus.h>
 
 char	*ft_strstr(const char *haystack, const char *needle)
 {
