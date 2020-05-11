@@ -6,11 +6,11 @@
 /*   By: lsuardi <lsuardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:22:47 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/05/08 22:26:04 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/05/11 18:31:58 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft_bonus.h>
+#include <libft.h>
 
 char	*ft_strcpy(char *dst, const char *src)
 {

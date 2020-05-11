@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrm_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lsuardi <lsuardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/29 17:42:42 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/29 17:46:56 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/05/11 18:33:07 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft_bonus.h>
+#include <libft.h>
 
 char		*ft_strrm(char const *s1, char const *set)
 {

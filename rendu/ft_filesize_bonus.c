@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_filesize_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lsuardi <lsuardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/31 02:22:23 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/31 03:07:59 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/05/11 18:30:39 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft_bonus.h>
+#include <libft.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>

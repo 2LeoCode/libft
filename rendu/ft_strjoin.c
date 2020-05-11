@@ -3,14 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lsuardi <lsuardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:55:40 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/04/29 22:53:16 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/05/11 18:27:25 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+
+static char	*ft_strcpy(char *dst, const char *src)
+{
+	*dst = *src;
+	if (!*src)
+		return (dst);
+	return (ft_strcpy(dst + 1, src + 1) - sizeof(char));
+}
 
 static char	*ft_strcat(char *s1, const char *s2)
 {

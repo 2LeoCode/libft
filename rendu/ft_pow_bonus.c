@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pow_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lsuardi <lsuardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 23:42:10 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/03/28 16:20:30 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/05/11 18:31:17 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft_bonus.h>
+#include <libft.h>
 
 double	ft_pow(double x, double y)
 {

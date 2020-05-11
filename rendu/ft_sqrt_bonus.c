@@ -6,11 +6,11 @@
 /*   By: lsuardi <lsuardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 00:23:14 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/05/05 17:43:44 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/05/11 18:31:39 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft_bonus.h>
+#include <libft.h>
 
 double	ft_sqrt(double x)
 {

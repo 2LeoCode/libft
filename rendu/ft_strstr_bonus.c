@@ -6,11 +6,11 @@
 /*   By: lsuardi <lsuardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:24:19 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/05/08 22:23:38 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/05/11 18:33:11 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft_bonus.h>
+#include <libft.h>
 
 char	*ft_strstr(const char *haystack, const char *needle)
 {

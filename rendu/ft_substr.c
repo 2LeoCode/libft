@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lsuardi <lsuardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 18:33:56 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/05/01 18:33:41 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/05/10 23:37:46 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static char		*ft_strndup(const char *s1, size_t n)
 char			*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	if (!s || !*s)
-		return (s ? ((char*)s) : NULL);
+		return (s ? ft_strndup(s, 0) : NULL);
 	if (!start)
 		return (ft_strndup(s, len));
 	return (ft_substr(s + 1, start - 1, len));

@@ -6,7 +6,7 @@
 #    By: lsuardi <lsuardi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/24 15:26:22 by lsuardi           #+#    #+#              #
-#    Updated: 2020/05/08 22:25:07 by lsuardi          ###   ########.fr        #
+#    Updated: 2020/05/11 18:44:43 by lsuardi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ ft_split ft_strlcpy ft_strrchr ft_strchr ft_strdup ft_lstadd_back ft_lstadd_fron
 ft_strjoin ft_strlcat ft_strnstr ft_strtrim ft_substr ft_tolower ft_strmapi\
 ft_toupper ft_lstclear ft_lstdelone ft_lstiter ft_lstlast ft_lstnew ft_lstsize ft_lstmap
 SRCS			= $(addsuffix .c, ${_SRCS})
+INC				= libft.h
 OBJ				= $(SRCS:.c=.o)
 B_TARGET		=
 _SRCS_BONUS		= ft_strndup ft_memdel ft_strclr ft_striter ft_striteri ft_strmap\
@@ -40,10 +41,10 @@ $(NAME): $(OBJ)
 bonus: $(B_TARGET) $(OBJ_BONUS)
 	@(ar rcs $(NAME) $(OBJ_BONUS) && echo 'Successfully added bonus files to library')
 
-%_bonus.o: %_bonus.c
-	@(echo 'Compiling $<...' && gcc $(CFLAGS) -c $< -o $@ -I .)
+%_bonus.o: %_bonus.c $(INC)
+	@(echo 'Compiling $<...' && gcc $(CFLAGS) -c $< -o $@ -I . -D BONUS)
 
-%.o: %.c
+%.o: %.c $(INC)
 	@(echo 'Compiling $<...' && gcc $(CFLAGS) -c $< -o $@ -I .)
 
 clean:
